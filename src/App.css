@@ -3,3 +3,12 @@
 *{
   font-family: 'Inter', sans-serif;
 }
+.loading-mobile{
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    margin-top: -3em;
+    margin-left: -2em;
+
+}

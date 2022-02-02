@@ -15,7 +15,7 @@ import Users from "./components/users/users";
 import Login from './components/Auth/Auth';
 import Settings from './components/setting/Setting';
 import Payment from './components/payment/Payment';
-
+import TransactionHistory from "./components/transaction/TransactionHistory";
 
 function App() {
 
@@ -48,6 +48,9 @@ function App() {
 
           </Route>
           <Route path="/payment" element={<Payment />}>
+
+          </Route>
+          <Route path="/transactions/history" element={<TransactionHistory />}>
 
           </Route>
 

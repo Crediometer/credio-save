@@ -205,6 +205,113 @@ color: #000000;
     bottom: 13vh;
 }
 
+/* new-mobile-css */
+.transaction-cnt-mobile{
+    background-color: white;
+    min-height: 93vh;
+    max-height: fit-content;
+    position: absolute;
+    top: 7vh;
+    width: 100vw;
+    max-height: fit-content;
+    padding-bottom: 13vh;
+}
+.transaction-top-bar-mobile{
+    height: 7vh;
+    width: 100vw;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 21px;
+    color: #BC0018;
+    padding: 0 4vh;
+}
+.transactions-overview-mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 0 6vw;
+}
+.transaction-card-mobile{
+    width: 88vw;
+    height: 180px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin: 10px 0;
+}
+.transaction-card-mobile hr{
+    margin: 0;
+}
+#transaction-card-top-mobile{
+    display: flex;
+    height: 50%;
+    padding: 5%;
+}
+#trans-right-mobile{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 17px;
+    justify-content: space-between;
+}
+#trans-right-mobile :first-child{
+    font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 1rem;
+line-height: 22px;
+/* identical to box height */
 
 
+color: #000000;
+}
 
+#trans-right-mobile :nth-child(2){
+    font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 22px;
+line-height: 27px;
+/* identical to box height */
+
+
+color: #707070;
+}
+#transaction-card-bottom-mobile {
+    display: flex;
+    height: 50%;
+}
+div#trans-bottom-left-mobile {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 5px 19px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #707070;
+    align-items: stretch;
+}
+div#trans-bottom-right-mobile {
+    width: 50%;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #707070;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 5px 12px;
+    width: 45%;
+    align-items: stretch;
+    text-align: left;
+}

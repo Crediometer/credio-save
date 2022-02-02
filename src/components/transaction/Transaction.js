@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react'
+// import TransactionHistory from './TranscationHistory';
 
 const viewportContext = React.createContext({});
 
@@ -37,7 +39,7 @@ const useViewport = () => {
     return { width, height };
 };
 
-const MobileComponent = () => {
+const NotInUse = () => {
     return (
         <div>
             <Navbar navIndex={"Transactions Overview"}></Navbar>
@@ -50,7 +52,7 @@ const MobileComponent = () => {
                                 Today
                             </button>
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a className="dropdown-item" href="#">History</a>
+                                <a className="dropdown-el" href="#">History</a>
                             </div>
                         </div>
                     </div>
@@ -192,15 +194,104 @@ const MobileComponent = () => {
                             </ul>
                         </div>
                     </div>
-                    <Link to ="/payment">
-                    <button className="btn make-payment mx-3">Make a Payment</button>
+                    <Link to="/payment">
+                        <button className="btn make-payment mx-3">Make a Payment</button>
                     </Link>
                 </div>
             </div>
         </div>
     )
 }
+const MobileComponent = () => {
+    const [data, setData] = useState(null);
+    const [isloaded, setIsloaded] = useState(false);
+    const [overview, setOverview] = useState(true);
+    let usertoken = JSON.parse(sessionStorage.getItem("tokenManager"))
+    // console.log(`data ----- ${data}`)
+    const requestOptions = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "authorization": `Bearer ${usertoken.token.token}`,
 
+        },
+    };
+    useEffect(() => {
+        fetch(`https://credio-merchant.herokuapp.com/api/v1/credio_store/get/transactions`,
+            requestOptions)
+            .then(results => results.json())
+            .then((transfer) => {
+                // let over = overview.json();
+                console.log(transfer);
+                setData(transfer);
+                setIsloaded(true);
+            }).catch((err) => {
+                console.log(err);
+            });
+    }, []);
+    
+    return (
+        // <></>
+        <>
+            <Navbar navIndex={"Transactions Overview"}></Navbar>
+            <Sidebar index='transactions' ></Sidebar>
+            {
+                !isloaded && <div className="loading-mobile">
+                    <FontAwesomeIcon
+                                    className="spinner mt-6 mb-4"
+                                    size="4x"
+                                    icon={faSpinner}
+                                ></FontAwesomeIcon>
+                </div>
+            }
+            {
+                data && 
+            <div className="transaction-cnt-mobile">
+                <select className="transaction-top-bar-mobile" name="" id="">
+                    <option value="today">Today</option>
+                    <option value="last-week">Last week</option>
+                    <option value="last-month">Last Month</option>
+                    <option value="All">All</option>
+                </select>
+                
+                <div className="transactions-overview-mobile">
+                    {
+                        data.data.map(el => {
+                            return (
+                                <Link to="/transactions/history" style={{textDecoration:'none'}}>
+
+                                <div className="transaction-card-mobile">
+                                    <div id="transaction-card-top-mobile">
+                                        
+                                            <img className='' src={Store} />
+                                            <div id='trans-right-mobile'>
+                                                <span className=''>{el.user.businessName}</span>
+                                                <span className=''>${el.user.balance}</span>
+                                            </div>
+                                        
+                                    </div>
+                                        <hr />
+                                        <div id='transaction-card-bottom-mobile' >
+                                            <div id='trans-bottom-left-mobile'>
+                                                <span className=''>New Balance</span>
+                                                <span className=''>${el.user.balance}</span>
+                                            </div>
+                                            <div id='trans-bottom-right-mobile'>
+                                                <span className=''>{el.user.updatedAt.substring(0, 10)}</span>
+                                                <span className=''>{el.user.updatedAt.substring(11, 16)}</span>
+                                            </div>
+                                        </div>
+                                </div>
+                                </Link>
+                            )
+                        })
+                    }
+                </div>
+            </div>
+                    }
+        </>
+    )
+}
 class DesktopComponent extends React.Component {
 
     handleClick(e) {
@@ -275,7 +366,7 @@ class DesktopComponent extends React.Component {
                 <div className='display-page'>
                     {!isLoaded ? (
                         <div class="container h-100">
-                            <div class="row h-100 justify-content-center align-items-center">
+                            <div class="row h-100 justify-content-center align-els-center">
 
                                 <FontAwesomeIcon
                                     className="spinner mt-6 mb-4"
@@ -304,26 +395,26 @@ class DesktopComponent extends React.Component {
                                 </div>
                                 <ul className='stores'>
                                     {
-                                        data.data.map((item) => {
+                                        data.data.map((el) => {
                                             return <li className='' >
                                                 <div className='card left-card'>
                                                     <div className='card-body'>
                                                         <div className='store-info'>
                                                             <img className='store-dp' src={Store} />
                                                             <div className='store-infos'>
-                                                                <span className='store-name'>{item.user.businessName}</span>
-                                                                <span className='store-balance'>${item.user.balance}</span>
+                                                                <span className='store-name'>{el.user.businessName}</span>
+                                                                <span className='store-balance'>${el.user.balance}</span>
                                                             </div>
                                                         </div>
                                                         <hr />
                                                         <div className='row' style={{ marginTop: "0.5rem" }}>
                                                             <div className='col-md-6 column-store'>
                                                                 <span className='deposit-text'>New Balance</span>
-                                                                <span className='deposit-text'>${item.user.balance}</span>
+                                                                <span className='deposit-text'>${el.user.balance}</span>
                                                             </div>
                                                             <div className='col-md-6 column-store'>
-                                                                <span className='balance'>{item.user.updatedAt.substring(0, 10)}</span>
-                                                                <span className='balance'>{item.user.updatedAt.substring(11, 16)}</span>
+                                                                <span className='balance'>{el.user.updatedAt.substring(0, 10)}</span>
+                                                                <span className='balance'>{el.user.updatedAt.substring(11, 16)}</span>
                                                             </div>
                                                         </div>
                                                     </div>

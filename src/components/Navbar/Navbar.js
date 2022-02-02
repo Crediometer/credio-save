@@ -34,23 +34,22 @@ const useViewport = () => {
 const MobileComponent = (props) => {
     const navIndex = props.navIndex;
     return (
-        <div>
+        <div className='navbar-cnt-mobile' >
             <div className='mobile-navbar'>
-                    <button className="btn " type="button" 
+                <button className="btn " type="button"
                     data-bs-toggle="collapse" data-bs-target="#sidebar" aria-expanded="false" aria-controls="sidebar"
-                    
-                    >
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <div id="navbar-index">
-                        <span>{navIndex}</span>
-                    </div>
-                    <div id="mobile-notification-icon">
+                >
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div id="navbar-index">
+                    <span>{navIndex}</span>
+                </div>
+                <div id="mobile-notification-icon">
                     <i className='far fa-bell'>
                     </i>
-                    </div>
+                </div>
             </div>
-            <div className="collapse collapse-horizontal" id="sidebar" style={{maxWidth:'200px'}} >
+            <div className="collapse collapse-horizontal" id="sidebar" style={{ maxWidth: '200px' }} >
                 <div className="" id="side-menu-cnt">
                     <div>
                         <Link to='#' style={{ textDecoration: 'none' }}>Your Account</Link>

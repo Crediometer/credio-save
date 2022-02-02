@@ -39,42 +39,6 @@ const useViewport = () => {
     return { width, height };
 };
 
-const MobileComponent = () => {
-    return (
-        <div>
-            <div className='mobile-display'>
-                <div className="create-user-form" style={{ visibility: "hidden" }}>
-                    <div className='mobile-view-heading'>
-                        <span className='business-detail-heading'>Business detail</span>
-                    </div>
-                    <div className='container my-5'>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Business Name</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" />
-                        </div>
-                        <div class="form-group my-3">
-                            <label for="exampleInputPassword1">Phone Number</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" />
-                        </div>
-                        <div class="form-group my-3">
-                            <label for="exampleInputPassword1">Address</label>
-                            <input style={{ height: "100px" }} type="password" class="form-control" id="exampleInputPassword1" />
-                        </div>
-                        <div class="form-group my-3">
-                            <label for="exampleInputPassword1">Business Type</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" />
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Add Business Logo</label>
-                            <input type="text" className='file-upload-mobile' placeholder='Add a Business Logo' />
-                        </div>
-                        <button className='submit-button mb-3 my-3 mx-2'>Submit</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
 
 const DesktopComponent = () => {
 
@@ -218,7 +182,67 @@ const DesktopComponent = () => {
         // console.log(data);
         // history.push(`/dashboard`);
     };
-    return (
+    const { width } = useViewport();
+    const breakpoint = 620;
+    if(width<breakpoint){
+        return (
+            <div>
+                <NavBar navIndex="new user"></NavBar>
+            <SideBar index='create'></SideBar>
+
+            <div className='mobile-cnt-newuser'>
+                    <ul className='business-detail-mobile'>
+                        <h3 className=''>Business details</h3>
+                        <li className=' business-details-mobile'>
+                            <span className='business-text-mobile'>Business Name</span>
+                            <input type="text" name="businessName" onBlur={handleBusinessName} required className='business-input-mobile' />
+                        </li>
+                        <li className='business-details-mobile'>
+                            <span className='business-text-mobile'>Phone Number</span>
+                            <input type="text" onBlur={handlephoneNumber} required name="phoneNumber" className='business-input-mobile' />
+                        </li>
+                        <li className=' business-details-mobile'>
+                            <span className='business-text'>Address</span>
+                            <input type="text" onBlur={handleBusinessAddress} required name="address" className='business-input-mobile' />
+                        </li>
+                        <li className='business-details-mobile'>
+                            <span className='business-text'>Business Type</span>
+                            <input type="text" onBlur={handleBusinessType} required name="businessType" className='business-input-mobile' />
+                        </li>
+                        <li className='business-details-mobile'>
+                            <span className='business-text'>Add Business Logo</span>
+                            <input type="file" className='file-upload-mobile' placeholder='AddLogo' />
+                        </li>
+                
+                        
+                    </ul>
+                    <ul className='business-detail-mobile'>
+                        <h3>Bank details</h3>
+                        <li className='business-details-mobile'>
+                            <span className='business-text-mobile'>Account Holder Name</span>
+                            <input type="text" onBlur={handleAccountName} required name="acctName" className='business-input-mobile' />
+                        </li>
+                        <li className='business-details-mobile'>
+                            <span className='business-text-mobile'>Account Number</span>
+                            <input type="text" onBlur={handleAccountNumber} required name="acctNumber" className='business-input-mobile' />
+                        </li>
+                        <li className='business-details-mobile'>
+                            <span className='business-text-mobile'>Confirm Account Number</span>
+                            <input type="text" onBlur={handleComfAccountNumber} required name="comfAcctNumber" className='business-input-mobile' />
+                        </li>
+                        <li className='business-details-mobile'>
+                            <span className='business-text'>Branch</span>
+                            <input type="text" onBlur={handleBank} required name="branch" className='business-input-mobile' />
+                        </li>
+                        <span className='verification-mobile'>To verify your Account we'll send you two tiny deposit within 1-2 days</span>
+                    </ul>
+                    
+
+            </div>
+            </div>
+        )
+    }
+    else return (
         <div>
             <NavBar></NavBar>
             <SideBar index='create'></SideBar>
@@ -296,17 +320,10 @@ const DesktopComponent = () => {
 }
 
 
-const MyComponent = () => {
-    const { width } = useViewport();
-    const breakpoint = 620;
-
-    return width < breakpoint ? <MobileComponent /> : <DesktopComponent />;
-};
-
 export default function Create() {
     return (
         <ViewportProvider>
-            <MyComponent />
+            <DesktopComponent />
         </ViewportProvider>
     );
 }

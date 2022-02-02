@@ -18,6 +18,8 @@
 
 /* mobile-view */
 #settings-cnt-mobile{
+    position: absolute;
+    top: 7vh;
     background-color: white;
     height: fit-content;
     width: 100vw;
