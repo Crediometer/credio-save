@@ -37,120 +37,120 @@ const useViewport = () => {
 const MobileComponent = () => {
     return (
         <div>
-            <Navbar navIndex={"Credio services"}></Navbar>
-            {/* <Sidebar index={"settings"}></Sidebar> */}
-            <div id="settings-cnt-mobile">
+            <Navbar index={3} title={"Settings"} widget={<div id="settings-cnt-mobile">
                 <div className="settings-section-mobile">
                     <div className="settings-heading-mobile">
                         <span>Customers</span>
                     </div>
                     <Link to="#" style={{ textDecoration: 'none' }}>
-                    <div className="settings-item-mobile">
-                       <span>Account and setting</span> 
-                    </div>
+                        <div className="settings-item-mobile">
+                            <span>Account and setting</span>
+                        </div>
                     </Link>
-                    <Link to="/users" style={{ textDecoration: 'none' }}>    
-                    <div className="settings-item-mobile">
-                        <span>Manage users</span>
-                    </div>
+                    <Link to="/users" style={{ textDecoration: 'none' }}>
+                        <div className="settings-item-mobile">
+                            <span>Manage users</span>
+                        </div>
                     </Link>
                     <Link to="#" style={{ textDecoration: 'none' }}>
-                        
-                    <div className="settings-item-mobile">
-                        <span>Custom form styles</span>
-                    </div>
+
+                        <div className="settings-item-mobile">
+                            <span>Custom form styles</span>
+                        </div>
                     </Link>
-                    <Link to="#" style={{ textDecoration: 'none' }}>    
-                    <div className="settings-item-mobile">
-                        <span>Chart of accounts</span>
-                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>
+                        <div className="settings-item-mobile">
+                            <span>Chart of accounts</span>
+                        </div>
                     </Link>
-                    <Link to="#" style={{ textDecoration: 'none' }}>    
-                    <div className="settings-item-mobile">
-                        <span>Credio labs</span>
-                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>
+                        <div className="settings-item-mobile">
+                            <span>Credio labs</span>
+                        </div>
                     </Link>
                 </div>
                 <hr />
                 <div className="settings-section-mobile">
-                <div className="settings-heading-mobile">
+                    <div className="settings-heading-mobile">
                         <span>Vendors</span>
                     </div>
-                    <Link to="#" style={{ textDecoration: 'none' }}>    
-                    <div className="settings-item-mobile">
-                        <span>All lists</span>
-                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>
+                        <div className="settings-item-mobile">
+                            <span>All lists</span>
+                        </div>
                     </Link>
-                    <Link to="#" style={{ textDecoration: 'none' }}>    
-                    <div className="settings-item-mobile">
-                        <span>Products and services</span>
-                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>
+                        <div className="settings-item-mobile">
+                            <span>Products and services</span>
+                        </div>
                     </Link>
-                    <Link to="#" style={{ textDecoration: 'none' }}>    
-                    <div className="settings-item-mobile">
-                        <span>Recurring transactions</span>
-                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>
+                        <div className="settings-item-mobile">
+                            <span>Recurring transactions</span>
+                        </div>
                     </Link>
-                    <Link to="#" style={{ textDecoration: 'none' }}>    
-                    <div className="settings-item-mobile">
-                        <span>Attachments</span>
-                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>
+                        <div className="settings-item-mobile">
+                            <span>Attachments</span>
+                        </div>
                     </Link>
                 </div>
                 <hr />
                 <div className="settings-section-mobile">
-                <div className="settings-heading-mobile">
+                    <div className="settings-heading-mobile">
                         <span>Employess</span>
                     </div>
-                    <Link to="#" style={{ textDecoration: 'none' }}>    
-                    <div className="settings-item-mobile">
-                        <span>Oredr chechs</span>
-                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>
+                        <div className="settings-item-mobile">
+                            <span>Oredr chechs</span>
+                        </div>
                     </Link>
-                    <Link to="#" style={{ textDecoration: 'none' }}>    
-                    <div className="settings-item-mobile">
-                        <span>Import data</span>
-                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>
+                        <div className="settings-item-mobile">
+                            <span>Import data</span>
+                        </div>
                     </Link>
-                    <Link to="#" style={{ textDecoration: 'none' }}>    
-                    <div className="settings-item-mobile">
-                        <span>Import desktop data</span>
-                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>
+                        <div className="settings-item-mobile">
+                            <span>Import desktop data</span>
+                        </div>
                     </Link>
-                    <Link to="#" style={{ textDecoration: 'none' }}>    
-                    <div className="settings-item-mobile">
-                        <span>Export data</span>
-                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>
+                        <div className="settings-item-mobile">
+                            <span>Export data</span>
+                        </div>
                     </Link>
-                    <Link to="#" style={{ textDecoration: 'none' }}>    
-                    <div className="settings-item-mobile">
-                        <span>Reconcile</span>
-                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>
+                        <div className="settings-item-mobile">
+                            <span>Reconcile</span>
+                        </div>
                     </Link>
-                    <Link to="#" style={{ textDecoration: 'none' }}>    
-                    <div className="settings-item-mobile">
-                        <span>Budgeting</span>
-                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>
+                        <div className="settings-item-mobile">
+                            <span>Budgeting</span>
+                        </div>
                     </Link>
-                    <Link to="#" style={{ textDecoration: 'none' }}>    
-                    <div className="settings-item-mobile">
-                        <span>Audit log</span>
-                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>
+                        <div className="settings-item-mobile">
+                            <span>Audit log</span>
+                        </div>
                     </Link>
-                    <Link to="#" style={{ textDecoration: 'none' }}>    
-                    <div className="settings-item-mobile">
-                        <span>SmartLook</span>
-                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>
+                        <div className="settings-item-mobile">
+                            <span>SmartLook</span>
+                        </div>
                     </Link>
-                    <Link to="#" style={{ textDecoration: 'none' }}>    
-                    <div className="settings-item-mobile">
-                        <span>Case Center</span>
-                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>
+                        <div className="settings-item-mobile">
+                            <span>Case Center</span>
+                        </div>
                     </Link>
                 </div>
                 <hr />
-            </div>
-        </div>
+            </div>}></Navbar>
+            {/* <Sidebar index={"settings"}></Sidebar> */}
+
+        </div >
     )
 }
 
@@ -158,8 +158,8 @@ const DesktopComponent = () => {
     return (
         <div>
             {/* <Navbar navIndex={"Credio services"}></Navbar> */}
-            {/* <Sidebar index={"settings"}></Sidebar> */}
-            <div className='mobile-display' style={{ background: "White" }}>
+
+            <Navbar index={3} title={"Settings"} widget={<div className='mobile-display' style={{ background: "White" }}>
                 <ul className='setting-items my-3'>
                     <span className='setting-item-heading my-2'>Customers</span>
                     <li className='setting-items my-2'>
@@ -204,7 +204,8 @@ const DesktopComponent = () => {
                         <span className='setting-item-text'>Manage users</span>
                     </li>
                 </ul>
-            </div>
+            </div>}>
+            </Navbar>
         </div>
     )
 }

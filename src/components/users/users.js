@@ -41,9 +41,8 @@ const useViewport = () => {
 const MobileComponent = () => {
   return (
     <div>
-      <NavBar navIndex="Users"></NavBar>
-      <SideBar index="dashboard" ></SideBar>
-      <div className='user-cnt-mobile'>
+      <NavBar title="All users" index={2} widget={<div>
+        <div className='user-cnt-mobile'>
           <div className="users-card my-3">
             <div className='card-body'>
               <div className='store-info' style={{ marginTop: "0rem" }}>
@@ -80,14 +79,14 @@ const MobileComponent = () => {
                   <span className="bank-name">021000322 – Bank of America</span>
                 </div>
               </div>
+            </div>
           </div>
         </div>
-      </div>
-      <Link to="/new/user">
-        <button className="btn make-payment mx-3">Create User</button>
-      </Link>
-    </div>
-  )
+        <Link to="/new/user">
+          <button className="btn make-payment mx-3">Create User</button>
+        </Link>
+      </div>}></NavBar>
+    </div >)
 }
 
 class DesktopComponent extends React.Component {
@@ -140,9 +139,7 @@ class DesktopComponent extends React.Component {
     console.log(data.data);
     return (
       <div>
-        <NavBar></NavBar>
-        <SideBar index='users'></SideBar>
-        <div className='display-page'>
+        <NavBar title="All users" index={2} widget={<div className='display-page'>
 
           {!isLoaded ? (
             <div class="container h-100">
@@ -213,7 +210,9 @@ class DesktopComponent extends React.Component {
 
             </div>
           )}
-        </div>
+        </div>}></NavBar>
+
+
       </div >
     )
   }

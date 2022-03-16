@@ -37,7 +37,7 @@ const useViewport = () => {
 
 const MobileComponent = () => {
     return (
-        <div>
+        <NavBar widget={<div><div className='pt-5'></div>
             <div className='mobile-display'>
                 <div className='mobile-upper-card'>
                     <div className='card-body' style={{ display: 'flex', flexDirection: "row" }}>
@@ -76,8 +76,40 @@ const MobileComponent = () => {
                         </div>
                     </div>
                 </div>
+                <div className='card deposits-card my-2' style={{ marginLeft: "4rem" }}>
+                    <div className='card-body'>
+                        <h4 className='deposits-card-heading'>Transaction Details</h4>
+                        <div className='line'></div>
+                        <div className='stores-info'>
+                            <img src={Store} alt="" className='store-img' />
+                            <div className='stores-infos'>
+                                <span className='store-nam'>Tony T Stores</span>
+                                <span className='store-mob'>#0000000000</span>
+                            </div>
+                        </div>
+                        <div className='line2'></div>
+                        <div className='cash-detail'>
+                            <span className='deposit-detail'>Deposit</span>
+                            <span className='cash-amt'>$4854.00</span>
+                            <span className='cash-transaction'>Cash Transaction</span>
+                        </div>
+                        <div className='line3'></div>
+                        <div className='description-section'>
+                            <span className='desc-section'>Description</span>
+                        </div>
+                        <div className='line4'></div>
+                        <div className='share-details'>
+                            <button className='btn share-btn'>Share</button>
+                            <div className='shares-details'>
+                                <span className='share-date'>Dec 07, 2021</span>
+                                <span className="share-time">11:10AM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </div>}></NavBar>
+
     )
 }
 
@@ -121,7 +153,7 @@ class DesktopComponent extends React.Component {
         };
 
 
-        await fetch(`https://credio-merchant.herokuapp.com/api/v1/credio_store/get/invoices`,
+        await fetch(`https://credio-merchant.herokuapp.com/api/v1/credio_store/invoices`,
             requestOptions)
             .then(results => results.json()).then((transfer) => {
                 // let over = overview.json();
@@ -145,15 +177,14 @@ class DesktopComponent extends React.Component {
         return (
             <div>
                 <NavBar></NavBar>
-                <SideBar index="transactions"></SideBar>
                 <div className='display-page'>
                     {!isLoaded ? (
                         <div class="container h-100">
                             <div class="row h-100 justify-content-center align-items-center">
 
                                 <FontAwesomeIcon
-                                    className="spinner mt-6 mb-4"
-                                    size="6x"
+                                    className="spinner"
+                                    size="5x"
                                     icon={faSpinner}
                                 ></FontAwesomeIcon>
 

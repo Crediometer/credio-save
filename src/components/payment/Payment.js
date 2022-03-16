@@ -36,9 +36,7 @@ const useViewport = () => {
 const MobileComponent = () => {
     return (
         <div>
-            <Navbar navIndex="Payment Detail"></Navbar>
-            <Sidebar index="transactions" ></Sidebar>
-            <div className="payment-cnt-mobile">
+            <Navbar index={0} title="Payment Detail" widget={<div className="payment-cnt-mobile">
                 <div class="dropdown payment-item-mobile">
                     <button class="dropdown-toggle" type="button" id="payment-type-mobile" data-bs-toggle="dropdown" aria-expanded="false">
                         Payment-type
@@ -59,17 +57,18 @@ const MobileComponent = () => {
                     </button>
                 </div>
             </div>
-        </div>
-    )
+
+            }></Navbar >
+
+        </div >)
+
 }
 
 const DesktopComponent = () => {
     return (
 
         <div>
-            <Navbar ></Navbar>
-            <Sidebar index='transactions' ></Sidebar>
-            <div className='display-page'>
+            <Navbar widget={<div className='display-page'>
                 <div className='dashboard-navbar'>
                     <a href="" className='dashboard-nav'>Make a Payment Detail</a>
                 </div >
@@ -161,8 +160,10 @@ const DesktopComponent = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div>}></Navbar>
+
+
+        </div >
     )
 }
 

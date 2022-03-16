@@ -184,13 +184,10 @@ const DesktopComponent = () => {
     };
     const { width } = useViewport();
     const breakpoint = 620;
-    if(width<breakpoint){
+    if (width < breakpoint) {
         return (
             <div>
-                <NavBar navIndex="new user"></NavBar>
-            <SideBar index='create'></SideBar>
-
-            <div className='mobile-cnt-newuser'>
+                <NavBar title="new user" index={5} widget={<div className='mobile-cnt-newuser'>
                     <ul className='business-detail-mobile'>
                         <h3 className=''>Business details</h3>
                         <li className=' business-details-mobile'>
@@ -213,8 +210,7 @@ const DesktopComponent = () => {
                             <span className='business-text'>Add Business Logo</span>
                             <input type="file" className='file-upload-mobile' placeholder='AddLogo' />
                         </li>
-                
-                        
+
                     </ul>
                     <ul className='business-detail-mobile'>
                         <h3>Bank details</h3>
@@ -236,10 +232,13 @@ const DesktopComponent = () => {
                         </li>
                         <span className='verification-mobile'>To verify your Account we'll send you two tiny deposit within 1-2 days</span>
                     </ul>
-                    
 
-            </div>
-            </div>
+
+                </div>} ></NavBar>
+
+
+
+            </div >
         )
     }
     else return (
